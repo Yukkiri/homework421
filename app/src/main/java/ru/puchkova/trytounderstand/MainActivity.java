@@ -64,8 +64,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void generateItems() {
+        String[] titles = getString(R.string.apps).split("\n\n");
+        String[] subtitles = getString(R.string.apps_sub).split("\n\n");
+
         for (int i = 0; i < images.size(); i++){
-            adapter.addItem(new Items(images.get(i), "meow","purr", false));
+            adapter.addItem(new Items(images.get(i), titles[i],subtitles[i], false));
         }
     }
 

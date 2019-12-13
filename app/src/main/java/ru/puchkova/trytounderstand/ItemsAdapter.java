@@ -107,9 +107,10 @@ public class ItemsAdapter extends BaseAdapter {
         image.setImageDrawable(itemData.getImage());
         title.setText(itemData.getTitle());
         subtitle.setText(itemData.getSubtitle());
-        //checkBox.setOnCheckedChangeListener(myCheckChangeList);
-        //checkBox.setTag(position);
-        //checkBox.setChecked(itemData.isChecked());
+
+        checkBox.setOnCheckedChangeListener(myCheckChangeList);
+        checkBox.setTag(position);
+        checkBox.setChecked(itemData.isChecked());
 
         return view;
     }

@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">TryToUnderstand</string>
+    <string name="apps">Города\n\nДеньги\n\nМониторинг\n\nФото\n\nПодписка\n\nЗадачи</string>
+    <string name="apps_sub">&#8230;и дома!\n\nКоторых у меня нет :(\n\nВообще-то здоровья! А не серверов!\n\n(на самом деле цифры)\n\nПодписываемся, ставим хаски!\n\nКоторые ты никогда не выполнишь, я-то знаю :)\n\n
+    </string>
 </resources>
