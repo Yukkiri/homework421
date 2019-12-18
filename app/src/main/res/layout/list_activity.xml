@@ -1,64 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/swipe_container"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-    <ScrollView
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:descendantFocusability="blocksDescendants"
+    android:padding="8dp">
+
+    <!-- Параметр descendantFocusability позволяет обрабатывать onClickItem()
+    для всего этого элемента списка. И все контролы не чувствительные к прикосновениям считаются
+    областью для нажатия. Кнопки будут работать, а иконки как часть области всего элемента -->
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_margin="8dp"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center_vertical"
+        tools:src="@mipmap/ic_launcher"/>
+
+    <!-- tools - нужны для проектирования верстки, обычно заполяются примерами
+    как это будет выглядеть, но при выполнении приложения не будут учитываться-->
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
-        <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <!-- layout_weight - веса, чем меньше вес, тем выше приоритет отрисовки.
+        Сейчас есть более удобные контейнеры, например ConstraintLayout,
+        но базовае Layout-ы проще в понимания и нужнее в обучении :) -->
+
+        <TextView
+            android:id="@+id/first"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="visible"
-            tools:context=".ListViewActivity">
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/textSize"
+            android:ellipsize="end"
+            tools:text="Title Example"/>
 
-            <TextView
-                android:id="@+id/second"
-                android:layout_width="54dp"
-                android:layout_height="16dp"
-                android:text="ddfgsdg"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/first"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/first"
-                app:layout_constraintTop_toBottomOf="@+id/first"
-                app:layout_constraintVertical_bias="0.054" />
+        <!-- ellipsize - место в котором можно будет поставить "...",
+        если заголовок окажется супердлинным. Может быть в начале, в середине и в конце
+        Например: "Однажды я решил стать разаб..."-->
 
-            <TextView
-                android:id="@+id/first"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="dsgsdg"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.167" />
+        <TextView
+            android:id="@+id/second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/textSizeSub"
+            android:ellipsize="end"
+            tools:text="Subtitle Example"/>
 
-            <ImageView
-                android:id="@+id/image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toStartOf="@+id/first"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/first"
-                tools:srcCompat="@tools:sample/avatars" />
+    </LinearLayout>
 
-            <CheckBox
-                android:id="@+id/checkBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CheckBox"
-                app:layout_constraintBottom_toBottomOf="@+id/second"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/first"
-                app:layout_constraintTop_toTopOf="@+id/first" />
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0"/>
 
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

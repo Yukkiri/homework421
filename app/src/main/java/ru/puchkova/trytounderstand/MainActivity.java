@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         images.add(ContextCompat.getDrawable(MainActivity.this,
                 android.R.drawable.ic_menu_camera));
         images.add(ContextCompat.getDrawable(MainActivity.this,
-                android.R.drawable.ic_menu_call));
+                R.drawable.cities.svg));
     }
 
     private void generateItems() {
