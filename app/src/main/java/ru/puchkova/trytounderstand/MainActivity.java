@@ -15,6 +15,8 @@ import androidx.core.content.ContextCompat;
 import java.util.ArrayList;
 import java.util.List;
 
+//короче я уже ничего не понимаю, адаптеры оказались чем-то непонятным для меня, хэлп!
+
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
@@ -39,17 +41,16 @@ public class MainActivity extends AppCompatActivity {
         list.setAdapter(adapter);
 
 
-        // При тапе по элементу списка будем показывать его данные
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Тут мы получаем и отображаем данные,
-                // но можно сделать и перейти в новую активити с этими данными
+
                 showItemData(position);
             }
         });
     }
 
+    //Непонятно, как получить мои загруженные картинки? Он их просто не видит
     private void fillImages() {
         images.add(ContextCompat.getDrawable(MainActivity.this,
                 android.R.drawable.ic_menu_report_image));

@@ -15,15 +15,10 @@ import java.util.List;
 
 public class ItemsAdapter extends BaseAdapter {
 
-    // Хранит список всех элементов списка
     private List<Items> items;
 
-    // LayoutInflater – класс, который из
-    // layout-файла создает View-элемент.
     private LayoutInflater inflater;
 
-    // Слушает все изменения галочки и меняет
-    // состояние конкретного ItemData
     private CompoundButton.OnCheckedChangeListener myCheckChangeList
             = new CompoundButton.OnCheckedChangeListener() {
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -32,8 +27,7 @@ public class ItemsAdapter extends BaseAdapter {
     };
 
 
-    // Конструктор, в который передается контекст
-    // для создания контролов из XML. И первоначальный список элементов.
+
     ItemsAdapter(Context context, List<Items> items) {
         if (items == null) {
             this.items = new ArrayList<>();
@@ -43,30 +37,23 @@ public class ItemsAdapter extends BaseAdapter {
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    // Добавляет элемент в конец списка.
-    // notifyDataSetChanged сообщает об обновлении данных и переотрисовывает.
-    // Вы можете как угодно менять items в других местах.
-    // Но не забывайте вызывать notifyDataSetChanged чтобы все обновилось.
     void addItem(Items item) {
         this.items.add(item);
         notifyDataSetChanged();
     }
 
-    // Удаляет элемент списка.
+    // вообще не поняла, зачем нам этот метод, но он был в примере поэтому пусть лежит
     void removeItem(int position) {
         items.remove(position);
         notifyDataSetChanged();
     }
 
-    // Обязательный метод абстрактного класса BaseAdapter.
-    // Он возвращает колличество элементов списка.
     @Override
     public int getCount() {
         return items.size();
     }
 
-    // Тоже обязательный метод.
-    // Должен возвращать элемент списка на позиции - position
+
     @Override
     public Items getItem(int position) {
         if (position < items.size()) {
@@ -76,20 +63,13 @@ public class ItemsAdapter extends BaseAdapter {
         }
     }
 
-    // И это тоже обязательный метод.
-    // Возвращает идентификатор. Обычно это position.
+
     @Override
     public long getItemId(int position) {
         return position;
     }
 
-    // Самый интересный обязательный метод.
-    // Создает или возвращает переиспользуемый View, с новыми данными
-    // для конкретной позиции. BaseAdapter – хитрый класс,
-    // он не держит в памяти все View - это дорого и будет тормозить.
-    // Поэтому он рисует только то что видно. Для этого есть convertView.
-    // Если нет чего переиспользовать, то создается новый View.
-    // А потом напоняет старую или новую View нужными данными.
+    // если я скажу, что понимаю, что тут происходит - я совру, потому что ничего не понимаю
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = convertView;
