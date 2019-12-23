@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private ItemsAdapter adapter;
-    private List<Drawable> images = new ArrayList<>();
+    private List<Integer> images = new ArrayList<>();
 
 
 
@@ -52,18 +52,12 @@ public class MainActivity extends AppCompatActivity {
 
     //Непонятно, как получить мои загруженные картинки? Он их просто не видит
     private void fillImages() {
-        images.add(ContextCompat.getDrawable(MainActivity.this,
-                R.drawable.cities));
-        images.add(ContextCompat.getDrawable(MainActivity.this,
-                R.drawable.money));
-        images.add(ContextCompat.getDrawable(MainActivity.this,
-                R.drawable.monitoring));
-        images.add(ContextCompat.getDrawable(MainActivity.this,
-                R.drawable.photo));
-        images.add(ContextCompat.getDrawable(MainActivity.this,
-                R.drawable.subscribe));
-        images.add(ContextCompat.getDrawable(MainActivity.this,
-                R.drawable.tasks));
+        images.add(R.drawable.cities);
+        images.add(R.drawable.money);
+        images.add(R.drawable.monitoring);
+        images.add(R.drawable.photo);
+        images.add(R.drawable.subscribe);
+        images.add(R.drawable.tasks);
     }
 
     private void generateItems() {

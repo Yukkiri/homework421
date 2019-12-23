@@ -84,7 +84,7 @@ public class ItemsAdapter extends BaseAdapter {
         TextView subtitle = view.findViewById(R.id.second);
         CheckBox checkBox = view.findViewById(R.id.checkbox);
 
-        image.setImageDrawable(itemData.getImage());
+        image.setImageResource(itemData.getImage());
         title.setText(itemData.getTitle());
         subtitle.setText(itemData.getSubtitle());
 

@@ -3,19 +3,19 @@ package ru.puchkova.trytounderstand;
 import android.graphics.drawable.Drawable;
 
 public class Items {
-    private Drawable image;
+    private int image;
     private String title;
     private String subtitle;
     private boolean checked;
 
-    public Items(Drawable image, String title, String subtitle, boolean checked) {
+    public Items(int image, String title, String subtitle, boolean checked) {
         this.image = image;
         this.title = title;
         this.subtitle = subtitle;
         this.checked = checked;
     }
 
-    public Drawable getImage() {
+    public int getImage() {
         return image;
     }
 
