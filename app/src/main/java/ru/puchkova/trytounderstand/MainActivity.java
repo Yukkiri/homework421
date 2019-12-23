@@ -53,15 +53,17 @@ public class MainActivity extends AppCompatActivity {
     //Непонятно, как получить мои загруженные картинки? Он их просто не видит
     private void fillImages() {
         images.add(ContextCompat.getDrawable(MainActivity.this,
-                android.R.drawable.ic_menu_report_image));
+                R.drawable.cities));
         images.add(ContextCompat.getDrawable(MainActivity.this,
-                android.R.drawable.ic_menu_add));
+                R.drawable.money));
         images.add(ContextCompat.getDrawable(MainActivity.this,
-                android.R.drawable.ic_menu_agenda));
+                R.drawable.monitoring));
         images.add(ContextCompat.getDrawable(MainActivity.this,
-                android.R.drawable.ic_menu_camera));
+                R.drawable.photo));
         images.add(ContextCompat.getDrawable(MainActivity.this,
-                R.drawable.cities.svg));
+                R.drawable.subscribe));
+        images.add(ContextCompat.getDrawable(MainActivity.this,
+                R.drawable.tasks));
     }
 
     private void generateItems() {
